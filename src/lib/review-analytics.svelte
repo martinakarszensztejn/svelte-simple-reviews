@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type * as types from "../types";
-  export let reviewsList: types.Review[];
+  import type {Review} from "../types";
+  export let reviewsList: Review[];
 </script>
 
 <div class="container">

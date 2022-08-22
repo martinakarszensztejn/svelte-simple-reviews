@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { each } from "svelte/internal";
-  import type * as types from "../types";
-  export let reviewsList: types.Review[];
+  import type {Review} from "../types";
+  export let reviewsList: Review[];
 </script>
 
 <div>

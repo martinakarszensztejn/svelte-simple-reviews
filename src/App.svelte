@@ -2,8 +2,8 @@
   import SetReviewsModule from "./lib/submit-review.svelte";
   import ReviewAnalyticsModule from "./lib/review-analytics.svelte";
   import ReadReviewsModule from "./lib/review-list.svelte";
-  import type * as types from "./types";
-  let reviewsList: types.Review[] = [];
+  import type {Review} from "./types";
+  let reviewsList: Review[] = [];
 </script>
 
 <main>

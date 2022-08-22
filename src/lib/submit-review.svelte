@@ -1,27 +1,18 @@
 <script lang="ts">
-  import type * as types from "../types";
-  let text1 = "How would you rate your service with  us?";
-  $: placeholder = "Tell us something that keeps you coming back";
-
+  import type {Review} from "../types";
+  const text1 = "How would you rate your service with us?";
+  const placeholder = "Tell us something that keeps you coming back";
   let description = "";
-  export let reviewsList: types.Review[] = [];
+  export let reviewsList: Review[] = [];
   const getFormattedTime = (q: Date): string =>
     `${q.getFullYear()}/${
       q.getMonth() + 1 < 10 ? `0${q.getMonth()}` + 1 : q.getMonth() + 1
     }/${q.getDate() < 10 ? `0${q.getDate()}` : q.getDate()}`;
 
-  let scores: { value: number; selected: boolean }[] = [
-    { value: 1, selected: false },
-    { value: 2, selected: false },
-    { value: 3, selected: false },
-    { value: 4, selected: false },
-    { value: 5, selected: false },
-    { value: 6, selected: false },
-    { value: 7, selected: false },
-    { value: 8, selected: false },
-    { value: 9, selected: false },
-    { value: 10, selected: false },
-  ];
+  let scores: { value: number; selected: boolean }[] = [];
+  for (let i = 1; i <= 10; i++) {
+    scores.push({selected:false,value:i});
+  }
   function submitReview() {
     const currentScore = scores.find((y) => y.selected);
     if (currentScore) {
